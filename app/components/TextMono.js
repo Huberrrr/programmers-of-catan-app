@@ -26,12 +26,13 @@ export default class TextMono extends React.Component {
     }
 
     render() {
-        const fontStyle = (this.props.style.fontWeight === 'bold') ? styles.textBold : styles.text;
+        const propsFontStyle = (this.props.style) ? this.props.style : null;
+        const customFontStyle = (this.props.style && this.props.style.fontWeight && this.props.style.fontWeight === 'bold') ? styles.textBold : styles.text;
 
         if (this.state.fontLoaded) {
-            return <Text style={[this.props.style, fontStyle]}>{this.props.children}</Text>
+            return <Text style={[propsFontStyle, customFontStyle]}>{this.props.children}</Text>
         } else if (this.state.fontLoaded) {
-            return <Text style={[this.props.style, fontStyle]}>{this.props.children}</Text>
+            return <Text style={[propsFontStyle, customFontStyle]}>{this.props.children}</Text>
         } else {
             return <Text></Text>
         }
