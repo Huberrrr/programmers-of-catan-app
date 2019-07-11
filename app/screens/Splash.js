@@ -12,8 +12,8 @@ export default class SplashScreen extends React.Component {
         super(props);
     }
 
-    _navigateToCapture() {
-        this.props.navigation.navigate('Capture');
+    _navigateToColorSelection() {
+        this.props.navigation.navigate('ColorSelection');
     }
 
     render() {
@@ -23,7 +23,7 @@ export default class SplashScreen extends React.Component {
                     source={require('../../assets/logo.png')}
                 />
                 <TouchableOpacity
-                    onPress={this._navigateToCapture.bind(this)}
+                    onPress={this._navigateToColorSelection.bind(this)}
                     style={styles.button}
                 >
                     <TextMono style={styles.buttonText}>Analyze Board</TextMono>
@@ -37,11 +37,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
     },
     button: {
-        position: 'absolute',
-        bottom: '15%',
         backgroundColor: '#FFCB05',
         width: '70%',
         alignItems: 'center',
