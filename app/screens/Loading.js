@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import TextMono from '../components/TextMono';
 
-export default class Loading extends React.Component {
+export default class LoadingScreen extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -15,7 +15,10 @@ export default class Loading extends React.Component {
         return (
             <View style={styles.container}>
                 <TextMono style={styles.infoText}>Loading</TextMono>
-                <Image source={require('../../assets/loading_hexagon.gif')} style={{width: 200, height: 200 }} />
+                <Image
+                    source={require('../../assets/loading_hexagon.gif')}
+                    style={styles.loading}
+                />
             </View>
         );
     }
@@ -34,4 +37,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FFCB05'
     },
+    loading: {
+        width: 200,
+        height: 200
+    }
 });
