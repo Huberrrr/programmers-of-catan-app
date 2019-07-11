@@ -16,7 +16,7 @@ export default class LoadingScreen extends React.Component {
             <View style={styles.container}>
                 <TextMono style={styles.infoText}>Loading</TextMono>
                 <Image
-                    source={require('../../assets/loading_hexagon.gif')}
+                    source={require('../../assets/loading-hexagon.gif')}
                     style={styles.loading}
                 />
             </View>
