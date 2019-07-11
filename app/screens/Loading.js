@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     View,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 import TextMono from '../components/TextMono';
 
@@ -14,6 +15,7 @@ export default class Loading extends React.Component {
         return (
             <View style={styles.container}>
                 <TextMono style={styles.infoText}>Loading</TextMono>
+                <Image source={require('../../assets/loading_hexagon.gif')} style={{width: 200, height: 200 }} />
             </View>
         );
     }
