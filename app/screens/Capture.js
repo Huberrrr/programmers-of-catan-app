@@ -10,12 +10,11 @@ import {
 import TextMono from '../components/TextMono';
 import * as Permissions from 'expo-permissions';
 import { Camera } from 'expo-camera';
+import * as ImageManipulator from 'expo-image-manipulator';
 
 export default class CaptureScreen extends React.Component {
     constructor(props) {
         super(props);
-
-        console.log(props.navigation.getParam('color'));
 
         this.state = {
             hasPermission: null,
@@ -33,8 +32,19 @@ export default class CaptureScreen extends React.Component {
     async _captureBoard() {
         if (this.camera) {
             let photo = await this.camera.takePictureAsync();
-            console.log(photo);
-            CameraRoll.saveToCameraRoll(photo.uri);
+
+            const manipulatedPhoto = await ImageManipulator.manipulateAsync(photo.uri, [
+                { rotate: 0 },
+            ], {
+                    compress: 0.5,
+                    format: ImageManipulator.SaveFormat.JPG,
+                    base64: true
+                }
+            );
+
+            this.props.navigation.navigate('Confirmation', {
+                photo: manipulatedPhoto
+            });
         }
     }
 
