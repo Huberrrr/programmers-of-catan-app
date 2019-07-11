@@ -10,3 +10,8 @@ web-build/
 web-report/
 .DS_Store
 package-lock.json
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/programmers-of-catan-app.iml
+.idea/workspace.xml
