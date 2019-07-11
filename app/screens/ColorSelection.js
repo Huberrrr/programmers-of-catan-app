@@ -13,7 +13,10 @@ export default class ColorSelectionScreen extends React.Component {
     }
 
     _navigateToCapture(color) {
-        this.props.navigation.navigate('Capture', {
+        // this.props.navigation.navigate('Capture', {
+        //     color: color
+        // });
+        this.props.navigation.navigate('Loading', {
             color: color
         });
     }
