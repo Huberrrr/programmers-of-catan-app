@@ -31,10 +31,8 @@ export default class TextMono extends React.Component {
 
         if (this.state.fontLoaded) {
             return <Text style={[propsFontStyle, customFontStyle]}>{this.props.children}</Text>
-        } else if (this.state.fontLoaded) {
-            return <Text style={[propsFontStyle, customFontStyle]}>{this.props.children}</Text>
         } else {
-            return <Text></Text>
+            return <Text>{this.props.children}</Text>
         }
     }
 }
