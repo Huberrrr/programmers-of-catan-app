@@ -1,8 +1,10 @@
 import React from 'react';
 import {
     StyleSheet,
-    View,
-    Image
+    Image,
+    ImageBackground,
+    TouchableOpacity,
+    Text
 } from 'react-native';
 
 export default class SplashScreen extends React.Component {
@@ -10,11 +12,23 @@ export default class SplashScreen extends React.Component {
         super(props);
     }
 
+    _navigateToCapture() {
+        this.props.navigation.navigate('Capture');
+    }
+
     render() {
         return (
-            <View style={styles.container}>
-
-            </View>
+            <ImageBackground source={require('../../assets/background.png')} style={styles.container}>
+                <Image
+                    source={require('../../assets/logo.png')}
+                />
+                <TouchableOpacity
+                    onPress={this._navigateToCapture.bind(this)}
+                    style={styles.button}
+                >
+                    <Text style={styles.buttonText}>Analyze Board</Text>
+                </TouchableOpacity>
+            </ImageBackground>
         );
     }
 }
@@ -22,8 +36,20 @@ export default class SplashScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    button: {
+        position: 'absolute',
+        bottom: '15%',
+        backgroundColor: '#F6CC45',
+        width: '70%',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 50
+    },
+    buttonText: {
+        fontSize: 24,
+        fontWeight: 'bold'
     }
 });

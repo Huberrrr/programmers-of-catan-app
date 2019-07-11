@@ -1,14 +1,15 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
 import SplashScreen from './Splash';
+import CaptureScreen from './Capture';
 
-const HomeStack = createStackNavigator({
+const HomeStack = createSwitchNavigator({
     Splash: {
-        screen: SplashScreen,
-        navigationOptions: {
-            header: null
-        }
+        screen: SplashScreen
+    },
+    Capture: {
+        screen: CaptureScreen
     }
 });
 
