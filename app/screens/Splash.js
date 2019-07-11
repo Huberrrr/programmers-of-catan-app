@@ -3,9 +3,9 @@ import {
     StyleSheet,
     Image,
     ImageBackground,
-    TouchableOpacity,
-    Text
+    TouchableOpacity
 } from 'react-native';
+import TextMono from '../components/TextMono';
 
 export default class SplashScreen extends React.Component {
     constructor(props) {
@@ -26,7 +26,7 @@ export default class SplashScreen extends React.Component {
                     onPress={this._navigateToCapture.bind(this)}
                     style={styles.button}
                 >
-                    <Text style={styles.buttonText}>Analyze Board</Text>
+                    <TextMono style={styles.buttonText}>Analyze Board</TextMono>
                 </TouchableOpacity>
             </ImageBackground>
         );

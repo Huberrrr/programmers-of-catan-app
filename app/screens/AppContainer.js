@@ -4,14 +4,15 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import SplashScreen from './Splash';
 import CaptureScreen from './Capture';
 
-const HomeStack = createSwitchNavigator({
-    Splash: {
-        screen: SplashScreen
+const HomeStack = createSwitchNavigator(
+    {
+        Splash: SplashScreen,
+        Capture: CaptureScreen
     },
-    Capture: {
-        screen: CaptureScreen
+    {
+        initialRouteName: 'Splash'
     }
-});
+);
 
 const AppContainer = createAppContainer(HomeStack);
 
