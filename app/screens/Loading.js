@@ -75,7 +75,6 @@ export default class LoadingScreen extends React.Component {
             body: JSON.stringify(photo)
         })
             .then((res) => {
-                console.log(res);
                 return res.json();
             })
             .then((json) => {

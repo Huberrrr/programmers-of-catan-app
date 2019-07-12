@@ -21,7 +21,6 @@ export default class ResultsScreen extends React.Component {
     }
 
     render() {
-        console.log('data:image/png;base64,' + this.props.navigation.getParam('photo'));
         return (
             <ImageBackground
                 source={{ uri: 'data:image/png;base64,' + this.props.navigation.getParam('photo') }}
