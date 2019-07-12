@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     startButton: {
         width: Dimensions.get('window').width * .7,
         backgroundColor: '#FFCB05',
-        width: '70%',
         alignItems: 'center',
         padding: 10,
         borderColor: '#FFCB05',
