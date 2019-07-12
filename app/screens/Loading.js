@@ -62,14 +62,25 @@ export default class LoadingScreen extends React.Component {
     }
 
     _test() {
-        // fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/visitors?x=data:image/jpeg;base64,')
-        //     .then((res) => {
-        //         console.log(res);
-        //         return res.json();
-        //     })
-        //     .then((json) => {
-        //         console.log(JSON.stringify(json));
-        //     });
+        const photo = {
+            base64: 'data:image/jpeg;base64,'
+        }
+
+        fetch('localhost:8000/api/suggest', {
+            // fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/suggest', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(photo)
+        })
+            .then((res) => {
+                console.log(res);
+                return res.json();
+            })
+            .then((json) => {
+                console.log(JSON.stringify(json));
+            });
 
         setTimeout(() => {
             clearInterval(this.interval);
