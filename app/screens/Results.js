@@ -5,13 +5,18 @@ import {
     StyleSheet,
     Image,
     Dimensions,
-    TouchableOpacity
+    TouchableOpacity,
+    CameraRoll
 } from 'react-native';
 import TextMono from '../components/TextMono';
 
 export default class ResultsScreen extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    _savePhoto() {
+        CameraRoll.saveToCameraRoll('data:image/png;base64,' + this.props.navigation.getParam('photo'));
     }
 
     _navigateToCapture() {
@@ -42,7 +47,7 @@ export default class ResultsScreen extends React.Component {
 
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
-                        onPress={() => { }}
+                        onPress={this._savePhoto.bind(this)}
                         style={styles.startButton}
                         activeOpacity={0.8}
                     >
