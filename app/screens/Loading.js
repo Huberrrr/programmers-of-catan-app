@@ -31,7 +31,7 @@ const MESSAGES = [
     'Stealing Emma from the others...',
     'Drooling on the pillow...',
     'Forgetting to submit etotals...',
-    'Draining your phones battery...',
+    'Draining your phone battery...',
     'Explaining Catan to Caly...',
     'Driving to LA...',
     'Dying hair blue...'
@@ -56,6 +56,9 @@ export default class LoadingScreen extends React.Component {
         let messages = this.state.messages;
         let length = this.state.messages.length;
         let randomNumber = Math.floor(Math.random() * length);
+        if (messages[randomNumber] === this.state.currentMessage) {
+            randomNumber = Math.floor(Math.random() * length);
+        }
         this.setState({
             currentMessage: messages[randomNumber]
         });
