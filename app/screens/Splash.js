@@ -14,7 +14,8 @@ export default class SplashScreen extends React.Component {
     }
 
     _navigateToColorSelection() {
-        this.props.navigation.navigate('ColorSelection');
+        // this.props.navigation.navigate('ColorSelection');
+        this.props.navigation.navigate('Info');
     }
 
     render() {
