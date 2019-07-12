@@ -4,14 +4,16 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import SplashScreen from './Splash';
 import ColorSelectionScreen from './ColorSelection';
 import CaptureScreen from './Capture';
-import Loading from "./Loading";
+import ConfirmationScreen from './Confirmation';
+import LoadingScreen from './Loading';
 
 const HomeStack = createSwitchNavigator(
     {
         Splash: SplashScreen,
         ColorSelection: ColorSelectionScreen,
         Capture: CaptureScreen,
-        Loading: Loading
+        Confirmation: ConfirmationScreen,
+        Loading: LoadingScreen
     },
     {
         initialRouteName: 'Splash'
