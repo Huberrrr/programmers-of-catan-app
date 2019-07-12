@@ -49,6 +49,10 @@ export default class CaptureScreen extends React.Component {
         }
     }
 
+    _navigateToInfo() {
+        this.props.navigation.push('Info');
+    }
+
     render() {
         const hasPermission = this.state.hasPermission;
 
@@ -91,6 +95,15 @@ export default class CaptureScreen extends React.Component {
                         style={styles.bottomBar}
                         source={require('../../assets/bottom-bar-bg.png')}
                     />
+                    <TouchableOpacity
+                        style={styles.infoButton}
+                        onPress={this._navigateToInfo.bind(this)}
+                        activeOpacity={0.8}
+                    >
+                        <Image
+                            source={require('../../assets/info.png')}
+                        />
+                    </TouchableOpacity>
                 </View>
             );
         }
@@ -126,6 +139,11 @@ const styles = StyleSheet.create({
     },
     captureButton: {
         top: -60
+    },
+    infoButton: {
+        position: 'absolute',
+        bottom: 40,
+        right: 20
     },
     bottomBar: {
         position: 'absolute',

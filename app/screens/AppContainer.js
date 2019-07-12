@@ -1,5 +1,5 @@
 import React from 'react';
-import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import { createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 
 import SplashScreen from './Splash';
 import ColorSelectionScreen from './ColorSelection';
@@ -9,21 +9,48 @@ import LoadingScreen from './Loading';
 import ResultsScreen from './Results';
 import InfoScreen from './Info';
 
-const HomeStack = createSwitchNavigator(
+const CaptureStack = createStackNavigator(
+    {
+        Capture: {
+            screen: CaptureScreen,
+            navigationOptions: {
+                header: null
+            }
+        },
+        Info: {
+            screen: InfoScreen,
+            navigationOptions: {
+                title: 'Instructions',
+                headerStyle: {
+                    backgroundColor: '#000000'
+                },
+                headerTintColor: '#FFCB05',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }
+        }
+    },
+    {
+        initialRouteName: 'Capture',
+
+    }
+)
+
+const MainNav = createSwitchNavigator(
     {
         Splash: SplashScreen,
         ColorSelection: ColorSelectionScreen,
-        Capture: CaptureScreen,
+        Capture: CaptureStack,
         Confirmation: ConfirmationScreen,
         Loading: LoadingScreen,
         Results: ResultsScreen,
-        Info: InfoScreen
     },
     {
         initialRouteName: 'Splash'
     }
 );
 
-const AppContainer = createAppContainer(HomeStack);
+const AppContainer = createAppContainer(MainNav);
 
 export default AppContainer;
