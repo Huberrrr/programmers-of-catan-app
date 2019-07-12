@@ -7,6 +7,7 @@ import CaptureScreen from './Capture';
 import ConfirmationScreen from './Confirmation';
 import LoadingScreen from './Loading';
 import ResultsScreen from './Results';
+import InfoScreen from './Info';
 
 const HomeStack = createSwitchNavigator(
     {
@@ -15,7 +16,8 @@ const HomeStack = createSwitchNavigator(
         Capture: CaptureScreen,
         Confirmation: ConfirmationScreen,
         Loading: LoadingScreen,
-        Results: ResultsScreen
+        Results: ResultsScreen,
+        Info: InfoScreen
     },
     {
         initialRouteName: 'Splash'
