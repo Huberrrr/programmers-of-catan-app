@@ -21,10 +21,13 @@ export default class InfoScreen extends React.Component {
 					<Page1/>
 				</View>
 				<View style={styles.mainBG}>
-					<TextMono style={styles.infoTextHeading}>Page 2</TextMono>
+					<Page2/>
 				</View>
 				<View style={styles.mainBG}>
-					<TextMono style={styles.infoTextHeading}>Page 3</TextMono>
+					<Page3/>
+				</View>
+				<View style={styles.mainBG}>
+					<Page4/>
 				</View>
 			</Swiper>
 		);
@@ -39,6 +42,42 @@ const Page1 = () => {
 				source = { require('../../assets/instructions_1.png') }	
 				style = { {marginTop: 90, marginBottom: 25, width: 250, height: 250} }/>
 			<TextMono style={styles.infoTextSubtext}>Set up the Catan board using a random configuration</TextMono>
+		</View>
+	);
+}
+
+const Page2 = () => {
+	return (
+		<View style={styles.mainBG}>
+			<TextMono style={styles.infoTextHeading}>Instructions</TextMono>
+			<Image
+				source={require('../../assets/instructions_2.png')}
+				style={{ marginTop: 90, marginBottom: 25, width: 250, height: 250 }} />
+			<TextMono style={styles.infoTextSubtext}>Ensure the tiles are lying flat and no tiles are overlapping</TextMono>
+		</View>
+	);
+}
+
+const Page3 = () => {
+	return (
+		<View style={styles.mainBG}>
+			<TextMono style={styles.infoTextHeading}>Instructions</TextMono>
+			<Image
+				source={require('../../assets/instructions_3.png')}
+				style={{ marginTop: 90, marginBottom: 25, width: 250, height: 250 }} />
+			<TextMono style={styles.infoTextSubtext}>For best results, center the resource numbers on each tile</TextMono>
+		</View>
+	);
+}
+
+const Page4 = () => {
+	return (
+		<View style={styles.mainBG}>
+			<TextMono style={styles.infoTextHeading}>Instructions</TextMono>
+			<Image
+				source={require('../../assets/instructions_4.png')}
+				style={{ marginTop: 90, marginBottom: 25, width: 250, height: 250 }} />
+			<TextMono style={styles.infoTextSubtext}>Take a picture of the Catan board, be sure to align the edges of the board with the white outline</TextMono>
 		</View>
 	);
 }
@@ -78,7 +117,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		textAlign: 'center',
 		color: '#ffffff',
-		paddingLeft: 15,
-		paddingRight: 15
+		paddingLeft: 35,
+		paddingRight: 35
 	},
 });
