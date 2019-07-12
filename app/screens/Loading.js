@@ -46,7 +46,8 @@ export default class LoadingScreen extends React.Component {
     }
 
     componentDidMount() {
-        this._getRandomLoadingMessage();
+        let interval = setInterval(this._getRandomLoadingMessage.bind(this), 2000);
+        this._test();
     }
 
     _getRandomLoadingMessage() {
@@ -56,7 +57,18 @@ export default class LoadingScreen extends React.Component {
         this.setState({
             currentMessage: messages[randomNumber]
         });
-        setTimeout(this._getRandomLoadingMessage.bind(this), 2000);
+    }
+
+    _test() {
+        // fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/visitors?x=data:image/jpeg;base64,')
+        //     .then((res) => {
+        //         console.log(res);
+        //         return res.json();
+        //     })
+        //     .then((json) => {
+        //         console.log(JSON.stringify(json));
+        //     });
+        console.log('here');
     }
 
     render() {
