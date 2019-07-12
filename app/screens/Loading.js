@@ -63,11 +63,11 @@ export default class LoadingScreen extends React.Component {
 
     _test() {
         const photo = {
-            base64: 'data:image/jpeg;base64,'
+            base64: this.props.navigation.getParam('photo').base64
         }
 
-        fetch('localhost:8000/api/suggest', {
-            // fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/suggest', {
+        // fetch('localhost:8000/api/suggest', {
+        fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/suggest', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -79,16 +79,12 @@ export default class LoadingScreen extends React.Component {
                 return res.json();
             })
             .then((json) => {
-                console.log(JSON.stringify(json));
+                clearInterval(this.interval);
+                this.props.navigation.navigate('Results', {
+                    color: this.props.navigation.getParam('color'),
+                    photo: json
+                });
             });
-
-        setTimeout(() => {
-            clearInterval(this.interval);
-            this.props.navigation.navigate('Results', {
-                color: this.props.navigation.getParam('color'),
-                photo: this.props.navigation.getParam('photo')
-            });
-        }, 6000);
     }
 
     render() {
