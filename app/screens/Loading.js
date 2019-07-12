@@ -67,7 +67,7 @@ export default class LoadingScreen extends React.Component {
     _test() {
         const photo = {
             base64: this.props.navigation.getParam('photo').base64,
-            color: this.props.navigation.getParam('color')
+            color: 'blue'
         }
 
         fetch('https://getstartedpython-cheerful-wolverine.mybluemix.net/api/suggest', {
