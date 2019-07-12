@@ -5,7 +5,9 @@ import {
     View,
     TouchableOpacity,
     Image,
-    CameraRoll
+    CameraRoll,
+    Dimensions,
+    PixelRatio
 } from 'react-native';
 import TextMono from '../components/TextMono';
 import * as Permissions from 'expo-permissions';
@@ -34,7 +36,7 @@ export default class CaptureScreen extends React.Component {
             let photo = await this.camera.takePictureAsync();
 
             const manipulatedPhoto = await ImageManipulator.manipulateAsync(photo.uri, [
-                { rotate: 0 },
+                { rotate: 0 }
             ], {
                     compress: 0.5,
                     format: ImageManipulator.SaveFormat.JPG,
@@ -43,6 +45,7 @@ export default class CaptureScreen extends React.Component {
             );
 
             this.props.navigation.navigate('Confirmation', {
+                color: this.props.navigation.getParam('color'),
                 photo: manipulatedPhoto
             });
         }
@@ -105,7 +108,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     infoTextContainer: {
-        paddingTop: 150,
+        paddingTop: 125,
         paddingLeft: 25,
         paddingRight: 25
     },
@@ -116,9 +119,11 @@ const styles = StyleSheet.create({
         color: '#FFCB05'
     },
     outline: {
-        top: -50,
-        width: 250 * 1.3,
-        height: 216 * 1.3
+        position: 'absolute',
+        top: (Dimensions.get('window').height / 2.3) - (307 / 2.3),
+        left: (Dimensions.get('window').width / 2) - (353 / 2),
+        width: 353,
+        height: 307
     },
     captureButton: {
         top: -60

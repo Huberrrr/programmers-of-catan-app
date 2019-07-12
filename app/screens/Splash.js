@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Image,
     ImageBackground,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions
 } from 'react-native';
 import TextMono from '../components/TextMono';
 
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#FFCB05',
-        width: '70%',
+        width: Dimensions.get('window').width * .7,
         alignItems: 'center',
         padding: 10,
         borderRadius: 50
