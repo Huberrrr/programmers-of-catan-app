@@ -75,7 +75,7 @@ export default class CaptureScreen extends React.Component {
                         </View>
                         <Image
                             style={styles.outline}
-                            source={require('../../assets/outline.png')}
+                            source={require('../../assets/outline-babies.png')}
                         />
                         <TouchableOpacity
                             style={styles.captureButton}
