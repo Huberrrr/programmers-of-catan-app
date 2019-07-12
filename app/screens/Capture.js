@@ -36,8 +36,8 @@ export default class CaptureScreen extends React.Component {
             const manipulatedPhoto = await ImageManipulator.manipulateAsync(photo.uri, [
                 { rotate: 0 }
             ], {
-                    compress: 0.5,
-                    format: ImageManipulator.SaveFormat.JPG,
+                    compress: 1,
+                    format: ImageManipulator.SaveFormat.PNG,
                     base64: true
                 }
             );
