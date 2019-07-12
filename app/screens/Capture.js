@@ -18,7 +18,8 @@ export default class CaptureScreen extends React.Component {
 
         this.state = {
             hasPermission: null,
-            type: Camera.Constants.Type.back
+            type: Camera.Constants.Type.back,
+            loading: false
         }
     }
 
@@ -31,6 +32,10 @@ export default class CaptureScreen extends React.Component {
 
     async _captureBoard() {
         if (this.camera) {
+            await this.setState({
+                loading: true
+            });
+
             let photo = await this.camera.takePictureAsync();
 
             const manipulatedPhoto = await ImageManipulator.manipulateAsync(photo.uri, [
@@ -82,6 +87,7 @@ export default class CaptureScreen extends React.Component {
                             source={require('../../assets/outline-babies.png')}
                         />
                         <TouchableOpacity
+                            disabled={this.state.loading}
                             style={styles.captureButton}
                             onPress={this._captureBoard.bind(this)}
                             activeOpacity={0.8}
