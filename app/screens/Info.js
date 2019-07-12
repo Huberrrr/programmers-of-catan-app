@@ -2,7 +2,8 @@ import React from 'react';
 import {
 	StyleSheet,
 	Dimensions,
-	View
+	View,
+	Image
 } from 'react-native';
 import TextMono from '../components/TextMono';
 import Swiper from 'react-native-swiper'
@@ -14,19 +15,32 @@ export default class InfoScreen extends React.Component {
 
 	render() {
 		return (
-			<Swiper loop={false} style={styles.mainBG} showsButtons={true}>
+			<Swiper loop={false} style={styles.mainBG} showsButtons={true}
+				nextButton={<View />} prevButton={<View />}>
 				<View style={styles.mainBG}>
-					<TextMono style={styles.infoText}>Page 1</TextMono>
+					<Page1/>
 				</View>
 				<View style={styles.mainBG}>
-					<TextMono style={styles.infoText}>Page 2</TextMono>
+					<TextMono style={styles.infoTextHeading}>Page 2</TextMono>
 				</View>
 				<View style={styles.mainBG}>
-					<TextMono style={styles.infoText}>Page 3</TextMono>
+					<TextMono style={styles.infoTextHeading}>Page 3</TextMono>
 				</View>
 			</Swiper>
 		);
 	}
+}
+
+const Page1 = () => {
+	return(
+		<View style= {styles.mainBG}>
+			<TextMono style={styles.infoTextHeading}>Instructions</TextMono>
+			<Image
+				source = { require('../../assets/instructions_1.png') }	
+				style = { {marginTop: 90, marginBottom: 25, width: 250, height: 250} }/>
+			<TextMono style={styles.infoTextSubtext}>Set up the Catan board using a random configuration</TextMono>
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
@@ -53,10 +67,18 @@ const styles = StyleSheet.create({
 		fontSize: 24,
 		fontWeight: 'bold'
 	},
-	infoText: {
-		fontSize: 22,
+	infoTextHeading: {
+		fontSize: 26,
 		fontWeight: 'bold',
 		textAlign: 'center',
 		color: '#FFCB05'
+	},
+	infoTextSubtext: {
+		fontSize: 20,
+		fontWeight: 'bold',
+		textAlign: 'center',
+		color: '#ffffff',
+		paddingLeft: 15,
+		paddingRight: 15
 	},
 });
