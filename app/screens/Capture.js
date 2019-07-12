@@ -5,9 +5,7 @@ import {
     View,
     TouchableOpacity,
     Image,
-    CameraRoll,
     Dimensions,
-    PixelRatio
 } from 'react-native';
 import TextMono from '../components/TextMono';
 import * as Permissions from 'expo-permissions';
@@ -82,6 +80,7 @@ export default class CaptureScreen extends React.Component {
                         <TouchableOpacity
                             style={styles.captureButton}
                             onPress={this._captureBoard.bind(this)}
+                            activeOpacity={0.8}
                         >
                             <Image
                                 source={require('../../assets/capture-button.png')}

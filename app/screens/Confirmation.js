@@ -51,12 +51,14 @@ export default class ConfirmationScreen extends React.Component {
                     <TouchableOpacity
                         onPress={this._navigateToLoading.bind(this)}
                         style={styles.startButton}
+                        activeOpacity={0.8}
                     >
                         <TextMono style={styles.startButtonText}>Yes, Start Analysis</TextMono>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={this._navigateToCapture.bind(this)}
                         style={styles.backButton}
+                        activeOpacity={0.8}
                     >
                         <TextMono style={styles.backButtonText}>Try Again</TextMono>
                     </TouchableOpacity>

@@ -23,8 +23,8 @@ export default class ColorSelectionScreen extends React.Component {
             <View style={styles.container}>
                 <TextMono style={styles.infoText}>Choose your color</TextMono>
                 <TouchableOpacity
-                    style={styles.test}
                     onPress={this._navigateToCapture.bind(this, 'red')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.red}
@@ -33,6 +33,7 @@ export default class ColorSelectionScreen extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={this._navigateToCapture.bind(this, 'orange')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.orange}
@@ -41,6 +42,7 @@ export default class ColorSelectionScreen extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={this._navigateToCapture.bind(this, 'green')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.green}
@@ -49,6 +51,7 @@ export default class ColorSelectionScreen extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={this._navigateToCapture.bind(this, 'blue')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.blue}
@@ -57,6 +60,7 @@ export default class ColorSelectionScreen extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={this._navigateToCapture.bind(this, 'brown')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.brown}
@@ -65,6 +69,7 @@ export default class ColorSelectionScreen extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={this._navigateToCapture.bind(this, 'white')}
+                    activeOpacity={0.8}
                 >
                     <Image
                         style={styles.white}

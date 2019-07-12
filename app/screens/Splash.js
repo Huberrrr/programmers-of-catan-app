@@ -26,6 +26,7 @@ export default class SplashScreen extends React.Component {
                 <TouchableOpacity
                     onPress={this._navigateToColorSelection.bind(this)}
                     style={styles.button}
+                    activeOpacity={0.8}
                 >
                     <TextMono style={styles.buttonText}>Analyze Board</TextMono>
                 </TouchableOpacity>
